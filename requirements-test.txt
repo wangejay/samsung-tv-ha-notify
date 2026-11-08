@@ -1,0 +1,6 @@
+# Offline test dependencies only; not installed by the HA integrations.
+aiohttp>=3.12,<4
+Pillow>=11.2.1,<13
+voluptuous==0.15.2
+voluptuous-serialize==2.6.0
+PyYAML>=6,<7

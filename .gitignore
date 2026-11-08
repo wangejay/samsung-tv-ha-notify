@@ -1,0 +1,33 @@
+# Never publish credentials, signing identities, or device-specific packages.
+.private/
+.env
+.env.*
+!.env.example
+*.p12
+*.pfx
+*.pem
+*.key
+*.crt
+*.cer
+*.csr
+*.jks
+profiles.xml
+author-signature.xml
+signature*.xml
+*.tpk
+*.wgt
+# Generated build/test data and local toolchains.
+dist/
+.build/
+bin/
+obj/
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+node_modules/
+.DS_Store
+*.log
+coverage.xml
+.coverage
+.pytest_cache/

@@ -1,0 +1,12 @@
+send:
+  name: Send native TV notification
+  description: Send one compact overlay to the already-running native TV app. Failure raises an error; ACK confirms download/queue, not physical display.
+  fields:
+    message:
+      name: Message
+      description: One line of notification text. No paths, URLs, or commands are accepted.
+      required: true
+      example: "您的包裹已送達"
+      selector:
+        text:
+          multiline: false

@@ -1,0 +1,24 @@
+{
+  "title": "Samsung 原生電視通知",
+  "config": {
+    "step": {
+      "user": {
+        "title": "原生電視角落通知",
+        "description": "電視須已安裝 SmittyOv01.overlay。請填 HA 內網 HTTP 位址，不是外網 HTTPS；此整合不會開啟電視電源。自動啟動接收端預設關閉，待實機確認後啟用。",
+        "data": {
+          "tv_ip": "電視 IPv4 位址",
+          "local_ip": "HA 內網 IPv4（UDP 來源與圖片網址）",
+          "http_port": "HA 現有 HTTP 連接埠",
+          "udp_port": "電視接收端 UDP 連接埠",
+          "ensure_receiver": "電視已開機時啟動接收端（實驗性，預設關閉）"
+        }
+      }
+    },
+    "error": {
+      "invalid_address": "請填內網 IPv4 位址及有效連接埠。"
+    },
+    "abort": {
+      "already_configured": "只支援一個原生電視接收端；重新設定前請移除原項目。"
+    }
+  }
+}

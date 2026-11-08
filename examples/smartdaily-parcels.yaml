@@ -1,0 +1,44 @@
+# Append this list item to automations.yaml after installing both integrations.
+# Handles every configured Smartdaily community. To limit it to one, add an
+# event_data.entry_id filter to the trigger using that HA config entry ID.
+- id: smartdaily_parcels_to_samsung_tv
+  alias: Smartdaily parcels to Samsung TV
+  description: Daily reminders for uncollected parcels; acknowledge only successful TV delivery.
+  mode: queued
+  max: 5
+  trigger:
+    - platform: event
+      event_type: smartdaily_postal_new_package
+  condition:
+    - condition: template
+      value_template: >-
+        {{ (trigger.event.data.test | default(false)) or
+           ((trigger.event.data.package_ids | default([])) | count > 0) }}
+  action:
+    - choose:
+        - conditions:
+            - condition: template
+              value_template: "{{ trigger.event.data.test | default(false) }}"
+          sequence:
+            - delay:
+                seconds: 5
+    - service: samsung_nui_notify.send
+      data:
+        message: >-
+          {{ '你有包裹通知（測試）'
+             if (trigger.event.data.test | default(false))
+             else '你有包裹通知' }}
+      response_variable: delivery
+    - choose:
+        - conditions:
+            - condition: template
+              value_template: >-
+                {{ delivery is defined and
+                   (delivery.acknowledged | default(false)) and
+                   (delivery.image_served | default(false)) and
+                   not (trigger.event.data.test | default(false)) }}
+          sequence:
+            - service: smartdaily_postal_ha.acknowledge
+              data:
+                entry_id: "{{ trigger.event.data.entry_id }}"
+                package_ids: "{{ trigger.event.data.package_ids }}"

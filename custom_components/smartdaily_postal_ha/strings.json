@@ -1,0 +1,33 @@
+{
+  "title": "Smartdaily package tracking",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Resident pickup barcode",
+        "description": "Enter the decoded DeviceSn/DeviceCode from your own Smartdaily pickup barcode. This is not a Samsung login, account password, or tracking number. Enter the code only here in Home Assistant.",
+        "data": {"device_code": "DeviceSn / DeviceCode", "tv_host": "TV private IPv4 address"}
+      },
+      "community": {
+        "title": "Choose your community",
+        "description": "Only communities already authorized for this resident device are listed.",
+        "data": {"community_id": "Community"}
+      },
+      "reauth_confirm": {
+        "title": "Update resident DeviceCode",
+        "description": "Enter a valid DeviceCode with access to the same community. Entity IDs will stay unchanged.",
+        "data": {"device_code": "DeviceSn / DeviceCode"}
+      }
+    },
+    "error": {
+      "invalid_auth": "The credential or community access was rejected. Check your resident pickup barcode.",
+      "invalid_tv_host": "Enter a literal private IPv4 address, without a URL or port.",
+      "cannot_connect": "The provider could not be reached or returned an unexpected response. Try again later.",
+      "no_communities": "No authorized communities were returned for this resident device."
+    },
+    "abort": {
+      "already_configured": "This resident device and community are already configured.",
+      "invalid_community": "The selected community is no longer available. Start again.",
+      "reauth_successful": "The DeviceCode was updated successfully."
+    }
+  }
+}

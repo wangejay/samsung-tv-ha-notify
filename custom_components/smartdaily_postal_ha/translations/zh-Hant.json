@@ -1,0 +1,33 @@
+{
+  "title": "智生活包裹追蹤",
+  "config": {
+    "step": {
+      "user": {
+        "title": "住戶領取包裹條碼",
+        "description": "請輸入自己智生活 App 領取包裹條碼解碼後的 DeviceSn／DeviceCode。這不是三星登入、智生活密碼或物流單號。只需在此 Home Assistant 畫面輸入，不必貼到聊天。",
+        "data": {"device_code": "DeviceSn／DeviceCode", "tv_host": "電視內網 IPv4 位址"}
+      },
+      "community": {
+        "title": "選擇社區",
+        "description": "此處只列出這台住戶裝置原本就已開通的社區。",
+        "data": {"community_id": "社區"}
+      },
+      "reauth_confirm": {
+        "title": "更新住戶 DeviceCode",
+        "description": "請輸入仍有同一社區權限的領取條碼。原有感應器識別不會變更。",
+        "data": {"device_code": "DeviceSn／DeviceCode"}
+      }
+    },
+    "error": {
+      "invalid_auth": "憑證或社區權限遭拒，請確認自己的住戶領取條碼。",
+      "invalid_tv_host": "請輸入內網 IPv4 位址，不要包含網址、通訊埠或主機名稱。",
+      "cannot_connect": "無法連線，或智生活回傳的格式與預期不同，請稍後再試。",
+      "no_communities": "此住戶裝置未回傳已開通的社區。"
+    },
+    "abort": {
+      "already_configured": "此住戶裝置與社區已設定。",
+      "invalid_community": "選擇的社區已無法使用，請重新設定。",
+      "reauth_successful": "DeviceCode 已更新。"
+    }
+  }
+}

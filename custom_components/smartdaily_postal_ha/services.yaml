@@ -1,0 +1,14 @@
+acknowledge:
+  name: Acknowledge package notification
+  description: Record today's successful TV delivery locally. Never changes Smartdaily packages or triggers a refresh.
+  fields:
+    entry_id:
+      required: true
+      description: The Smartdaily config entry ID from the notification event.
+      selector:
+        text:
+    package_ids:
+      required: true
+      description: List of package IDs that the TV actually acknowledged.
+      selector:
+        object:

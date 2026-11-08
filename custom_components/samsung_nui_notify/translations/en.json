@@ -1,0 +1,24 @@
+{
+  "title": "Samsung Native TV Overlay",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Native TV overlay sender",
+        "description": "The native SmittyOv01.overlay TV app must already be installed. Enter HA's directly reachable plain HTTP LAN address/port, not an external HTTPS proxy. Optional receiver launch never wakes the TV and remains off by default pending TV verification.",
+        "data": {
+          "tv_ip": "TV IPv4 address",
+          "local_ip": "HA LAN IPv4 address (UDP source and image URL)",
+          "http_port": "Existing HA plain HTTP port",
+          "udp_port": "Native TV receiver UDP port",
+          "ensure_receiver": "Launch the receiver only if the TV reports on (experimental, default off)"
+        }
+      }
+    },
+    "error": {
+      "invalid_address": "Use literal private IPv4 addresses and valid ports."
+    },
+    "abort": {
+      "already_configured": "Only one native TV sender is supported. Remove the existing entry before configuring another."
+    }
+  }
+}

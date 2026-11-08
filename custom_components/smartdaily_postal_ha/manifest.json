@@ -1,0 +1,14 @@
+{
+  "domain": "smartdaily_postal_ha",
+  "name": "智生活包裹追蹤",
+  "version": "0.5.5.1",
+  "config_flow": true,
+  "integration_type": "service",
+  "iot_class": "cloud_polling",
+  "documentation": "https://github.com/wangejay/samsung-tv-ha-notify/blob/main/docs/smartdaily.md",
+  "issue_tracker": "https://github.com/wangejay/samsung-tv-ha-notify/issues",
+  "codeowners": [
+    "@wangejay"
+  ],
+  "requirements": []
+}

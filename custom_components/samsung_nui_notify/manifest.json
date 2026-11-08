@@ -1,0 +1,17 @@
+{
+  "domain": "samsung_nui_notify",
+  "name": "Samsung Native TV Overlay",
+  "version": "0.1.0",
+  "config_flow": true,
+  "dependencies": [
+    "http"
+  ],
+  "codeowners": [
+    "@wangejay"
+  ],
+  "documentation": "https://github.com/wangejay/samsung-tv-ha-notify",
+  "integration_type": "device",
+  "iot_class": "local_push",
+  "requirements": [],
+  "issue_tracker": "https://github.com/wangejay/samsung-tv-ha-notify/issues"
+}

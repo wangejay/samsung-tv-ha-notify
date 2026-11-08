@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns="http://tizen.org/ns/packages" api-version="9.0" package="SmittyOv01" version="1.0.1">
+  <profile name="tv" />
+  <ui-application appid="SmittyOv01.overlay" exec="SmittyOverlay.dll" type="dotnet" multiple="false" taskmanage="false" nodisplay="true" launch_mode="single" api-version="9.0">
+    <label>SmittyBox Overlay</label>
+    <icon>icon.png</icon>
+    <splash-screens />
+    <background-category value="background-network" />
+  </ui-application>
+  <privileges>
+    <privilege>http://tizen.org/privilege/internet</privilege>
+    <privilege>http://tizen.org/privilege/window.priority.set</privilege>
+  </privileges>
+</manifest>
